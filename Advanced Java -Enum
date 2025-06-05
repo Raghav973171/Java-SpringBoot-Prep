@@ -11,10 +11,76 @@ enum Status{
            System.out.println(s);
        }
     }
+}public class Test{
+    
+}
+
+
+
+
+// if else in enum
+
+enum Status{
+    running,failed ,success,waiting;//these are the objects of class and can be used like objects
+    
+    
+    public static void main(String args[]){
+        
+        Status s=Status.running;
+        
+        if(s==success){
+            System.out.println("your work is done");
+        }
+        else if(s==failed){
+            System.out.println("your work is not done");
+        }
+        
+         else if(s==waiting){
+            System.out.println("your work is waiting");
+        }
+         else {
+            System.out.println("your work is pending");
+        }
     
     
 }
 
-public class Test{
+
+
+//Enum Class
+
+Enum class cannot extended ,but it extendes the enum class class where it gets methods
+
+enum Books{
+    
+    comics("Spider"),fiction("Harry"),story("Tom"),novel("Eppics");
+    
+    private String name;
+    
+    private Books(String name){
+        this.name=name;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public String setName(String name){
+        this.name=name;
+        return name;
+    }
+
+    
+    
+     public static void main(String args[]){
+        Books b= Books.comics;
+        System.out.println(b.setName("Raghav"));
+    }
+    
+    
     
 }
+    
+    
+    
+   
