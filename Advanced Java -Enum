@@ -1,0 +1,20 @@
+enum Status{
+    running,failed ,success,waiting;//these are the objects of class and can be used like objects
+    
+    
+    public static void main(String args[]){
+        Status ss[]=Status.values();
+        
+       // System.out.println(s.ordinal());
+       
+       for(Status s: ss){
+           System.out.println(s);
+       }
+    }
+    
+    
+}
+
+public class Test{
+    
+}
