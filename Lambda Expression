@@ -1,0 +1,22 @@
+@FunctionalInterface
+interface Raghav{
+    void show(int i);
+
+     public static void main(String args[]){
+        Raghav obj= (i)->System.out.println("in show");
+        obj.show(5);
+    }
+}
+
+
+////Lambda Expression with return function
+
+@FunctionalInterface
+interface Raghav{
+    int  addition(int i,int j);
+
+     public static void main(String args[]){
+        Raghav obj= (i,j)-> i+j; //here we also do not write return i+j; 
+        obj.addition(5,5);
+    }
+}
