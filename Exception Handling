@@ -1,0 +1,136 @@
+Basic Try-Catch Block:-
+
+class ExceptionHandling {
+    
+    void  DoOperation(int i){
+        try{
+            System.out.println(5/i);
+        }
+        
+        catch(Exception e){
+            System.out.println("something went wrong");
+        }
+    }
+    public static void main(String[] args) {
+        ExceptionHandling obj=new ExceptionHandling();
+        obj.DoOperation(0);
+    }
+}
+
+
+
+////Multiple Try-Catch Block
+class ExceptionHandling {
+
+    void DoOperation(int i, int[] arr) {
+        try {
+            System.out.println(5 / i);        // Might throw ArithmeticException
+            System.out.println(arr[0]);       // Safe, always exists
+            System.out.println(arr[5]);       // Will throw ArrayIndexOutOfBoundsException
+        }
+
+        catch (ArithmeticException e) {
+            System.out.println("cannot divide by zero");
+        }
+
+        catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("limit exceeded");
+        }
+
+        catch (Exception e) {
+            System.out.println("something went wrong");
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = new int[5];  // Index 0 to 4
+        ExceptionHandling obj = new ExceptionHandling();
+        obj.DoOperation(0, arr); // 'i' is 0 —> division by zero
+    }
+}
+
+
+
+
+
+
+////Throw Keyword:-
+
+
+
+class ExceptionHandling {
+
+    void DoOperation(int i, int[] arr) {
+        try {
+            if (i == 0) {
+                throw new ArithmeticException("Do not divide by zero; this gives you an error");
+            }
+            System.out.println(5 / i);
+
+            // Example to trigger ArrayIndexOutOfBounds
+            System.out.println(arr[10]);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Caught ArithmeticException: " + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Caught ArrayIndexOutOfBoundsException: limit exceeded");
+        } catch (Exception e) {
+            System.out.println("Caught General Exception: " + e);
+        }
+    }
+
+    public static void main(String[] args) {
+        int arr[] = new int[5];
+        ExceptionHandling obj = new ExceptionHandling();
+        obj.DoOperation(0, arr);
+    }
+}
+
+
+
+
+
+////MY own exception ////
+
+class RaghavException extends Exception{
+    
+    
+    public RaghavException(String str){
+        
+        super(str);
+    }
+    public static void main(String[] args) {
+        
+        int arr[]=new int[5];
+        ExceptionHandling obj=new ExceptionHandling();
+        obj.DoOperation(0,arr);
+    }
+}
+
+class ExceptionHandling {
+    
+    void  DoOperation(int i,int[] arr){
+        try{
+            
+            
+           if(i==0){
+               throw new RaghavException("do not divide by zero this gives you an error");
+           }
+           System.out.println(5/i);
+            
+        }
+        catch(RaghavException e){
+            System.out.println(e);
+        }
+      
+        catch(Exception e){
+            System.out.println(e);
+        }
+        
+       
+    }
+    
+}
+
+in this we have to make the class of our exception and then use the methods of Exception class by extending it 
+
