@@ -1,0 +1,29 @@
+throws keyword used when we did not want to handle exception in method rather than managing it in main method where we use try catch block to run that method 
+
+
+
+
+class Main {
+    
+    public void divide(int i) throws ArithmeticException{
+        System.out.println(5/i);
+    }
+    public static void main(String[] args) {
+       
+       Main obj=new Main();
+       
+       try{
+           obj.divide(0);
+       }
+       
+       catch(Exception e){
+           System.out.println(e);
+       }
+       
+    }
+}
+
+
+
+
+
