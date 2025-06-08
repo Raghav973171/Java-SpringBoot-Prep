@@ -1,0 +1,38 @@
+class Thread1 extends Thread{
+    public void run(){
+        for(int i=0;i<10;i++){
+            System.out.print("Hi"+ " ");
+            
+            try{
+                Thread.sleep(1000);
+            }catch(InterruptedException e){
+                
+            }
+            
+        }
+    }
+    
+    public static void main(String args[]){
+        Thread1 obj =new Thread1();
+         Thread2 obj1 =new Thread2();
+         
+         obj.start();//before this obj.setPriority(from 1 to 10)
+         obj1.start();//or obj.setPriority(MAX_PRIORITY OR MIN_PRIORITY)
+        
+    }
+}
+
+class Thread2 extends Thread{
+   public  void run(){
+        for(int i=0;i<10;i++){
+            System.out.println("Hello");
+              try{
+                Thread.sleep(1000);
+            }catch(InterruptedException e){
+                
+            }
+        }
+    }
+}
+
+// by this we can use thread method to include many functionalities in system
