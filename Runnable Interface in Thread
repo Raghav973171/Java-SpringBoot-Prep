@@ -1,0 +1,49 @@
+Thread class is the class which implements the runnable interface and this runnable interface and this interface has run method and we use this because sometimes we need to use 
+some methods that restricted by extending Thread so we implements Runnable interface for this we create an object of runnable interface and then we make object of thread and then 
+start this by passing object of thread that we have made 
+
+
+
+class A implements Runnable{
+    public void run(){
+        for(int i=0;i<10;i++){
+            System.out.print("Hi"+ " ");
+            
+            try{
+                Thread.sleep(1000);
+            }catch(InterruptedException e){
+                
+            }
+            
+        }
+    }
+    
+    public static void main(String args[]){
+        
+        Runnable obj=new A();
+         Runnable obj1=new B();
+         
+         
+        Thread t1 =new Thread(obj);
+         Thread t2 =new Thread(obj1);
+         
+         t1.start();
+         t2.start();
+        
+    }
+}
+
+class B implements Runnable{
+   public  void run(){
+        for(int i=0;i<10;i++){
+            System.out.println("Hello");
+              try{
+                Thread.sleep(1000);
+            }catch(InterruptedException e){
+                
+            }
+        }
+    }
+}
+
+
